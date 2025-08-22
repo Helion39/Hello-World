@@ -11,6 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import ThemeToggleButton from "./theme-toggle-button";
 
 export default function NavbarDemo() {
   const navItems = [
@@ -47,6 +48,7 @@ export default function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="primary" href="#contact">Contact me</NavbarButton>
+            <ThemeToggleButton />
           </div>
         </NavBody>
 
