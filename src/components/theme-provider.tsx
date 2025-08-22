@@ -29,18 +29,23 @@ export function ThemeProvider({
   )
 
   useEffect(() => {
-    const root = window.document.documentElement
-    root.classList.remove("light", "dark")
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
-      root.classList.add(systemTheme)
-      return
+    const themeLink = document.getElementById("theme-link") as HTMLLinkElement | null;
+    let currentTheme = theme;
+
+    if (currentTheme === "system") {
+      currentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
-    root.classList.add(theme)
-  }, [theme])
+
+    if (themeLink) {
+      themeLink.href = `/${currentTheme}.css`;
+    } else {
+      const newLink = document.createElement("link");
+      newLink.id = "theme-link";
+      newLink.rel = "stylesheet";
+      newLink.href = `/${currentTheme}.css`;
+      document.head.appendChild(newLink);
+    }
+  }, [theme]);
 
   const value = {
     theme,
