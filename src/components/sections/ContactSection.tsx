@@ -72,14 +72,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-12" style={{ backgroundColor: '#f1f3f4' }}>
+    <section id="contact" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">Let's Connect</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">Let's Connect</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Have a project in mind or want to connect? I'd love to hear from you.
           </p>
-          <p className="text-sm text-gray-500 mb-8">
+          <p className="text-sm text-muted-foreground/80 mb-8">
             Your privacy is important. This form uses secure transmission and your information is only used to respond to your inquiry.
           </p>
         </div>
@@ -88,7 +88,7 @@ const ContactSection = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
                 </label>
                 <Input
@@ -98,16 +98,12 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full"
                   placeholder="Your name"
-                  style={{
-                    border: '3px solid rgba(210, 210, 210, 0.8)',
-                    borderRadius: '0.75rem'
-                  }}
+                  className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                   Email
                 </label>
                 <Input
@@ -117,17 +113,14 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full"
                   placeholder="your.email@example.com"
-                  style={{
-                    border: '3px solid rgba(210, 210, 210, 0.8)',
-                    borderRadius: '0.75rem'
-                  }}
+                  className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
             </div>
+            
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                 Message
               </label>
               <Textarea
@@ -137,102 +130,88 @@ const ContactSection = () => {
                 onChange={handleInputChange}
                 required
                 rows={6}
-                className="w-full"
-                placeholder="Just say hello! I'd love to hear from you."
-                style={{
-                  border: '3px solid rgba(210, 210, 210, 0.8)',
-                  borderRadius: '0.75rem'
-                }}
+                placeholder="Tell me about your project or how I can help..."
+                className="bg-background border-border text-foreground placeholder:text-muted-foreground resize-none"
               />
             </div>
+
+            {/* CAPTCHA */}
+            <div className="flex justify-center">
+              <CustomCaptcha
+                ref={captchaRef}
+                onChange={handleCaptchaChange}
+                theme="light"
+              />
+            </div>
+
+            {/* Status Messages */}
+            {status === 'success' && (
+              <div className="p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+                <p className="text-green-800 dark:text-green-200 text-center">
+                  Thank you! Your message has been sent successfully.
+                </p>
+              </div>
+            )}
             
-            {/* Custom reCAPTCHA */}
-            <CustomCaptcha
-              ref={captchaRef}
-              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
-              onChange={handleCaptchaChange}
-              theme="light"
-            />
-            
-            <div className="text-center">
+            {status === 'error' && (
+              <div className="p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
+                <p className="text-red-800 dark:text-red-200 text-center">
+                  {!captchaValue ? 'Please complete the CAPTCHA.' : 'Something went wrong. Please try again.'}
+                </p>
+              </div>
+            )}
+
+            <div className="flex justify-center">
               <Button
                 type="submit"
-                disabled={isLoading || !captchaValue}
-                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading}
+                className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               >
                 {isLoading ? 'Sending...' : 'Send Message'}
               </Button>
-
-              {status === 'success' && (
-                <p className="text-green-600 text-sm mt-3">
-                  Message sent successfully! I'll get back to you soon.
-                </p>
-              )}
-
-              {status === 'error' && (
-                <p className="text-red-600 text-sm mt-3">
-                  {!captchaValue ? 'Please complete the CAPTCHA verification.' : 'Failed to send message. Please try again or use the social media links below.'}
-                </p>
-              )}
-
-              <p className="text-xs text-gray-400 mt-4">
-                By submitting this form, you agree to our privacy practices. No data is stored permanently.
-              </p>
             </div>
           </form>
         </div>
 
+        {/* Social Links */}
         <div className="text-center">
-          <p className="text-gray-500 text-sm mb-6">
-            Or connect with me on social media
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <p className="text-muted-foreground mb-6">Or connect with me on social media:</p>
+          <div className="flex justify-center space-x-6">
             <a
-              href="https://www.linkedin.com/in/mohammad-nabil-hanif-469b97303"
+              href="https://linkedin.com/in/your-profile"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 bg-white rounded-xl hover:shadow-md transition-all duration-300"
-              style={{
-                border: '3px solid rgba(210, 210, 210, 0.8)'
-              }}
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              aria-label="LinkedIn Profile"
             >
-              <FaLinkedin className="w-5 h-5 text-gray-700" />
+              <FaLinkedin size={24} />
             </a>
-
             <a
-              href="https://github.com/Helion39"
+              href="https://github.com/your-username"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 bg-white rounded-xl hover:shadow-md transition-all duration-300"
-              style={{
-                border: '3px solid rgba(210, 210, 210, 0.8)'
-              }}
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              aria-label="GitHub Profile"
             >
-              <FaGithub className="w-5 h-5 text-gray-700" />
+              <FaGithub size={24} />
             </a>
-
             <a
-              href="https://wa.me/6282246202003"
+              href="https://wa.me/your-phone-number"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 bg-white rounded-xl hover:shadow-md transition-all duration-300"
-              style={{
-                border: '3px solid rgba(210, 210, 210, 0.8)'
-              }}
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              aria-label="WhatsApp"
             >
-              <FaWhatsapp className="w-5 h-5 text-gray-700" />
+              <FaWhatsapp size={24} />
             </a>
-
             <a
-              href="https://t.me/+6282246202003"
+              href="https://t.me/your-username"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 bg-white rounded-xl hover:shadow-md transition-all duration-300"
-              style={{
-                border: '3px solid rgba(210, 210, 210, 0.8)'
-              }}
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              aria-label="Telegram"
             >
-              <FaTelegram className="w-5 h-5 text-gray-700" />
+              <FaTelegram size={24} />
             </a>
           </div>
         </div>

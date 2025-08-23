@@ -18,11 +18,11 @@ const ProjectCardsSection = () => {
   };
 
   return (
-    <section id="project-cards" className="py-20 px-6 md:px-12" style={{backgroundColor: '#f1f3f4'}}>
+    <section id="project-cards" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">Portfolio</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">Portfolio</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover my technical and creative projects, from current builds to completed work.
           </p>
         </div>
@@ -31,29 +31,18 @@ const ProjectCardsSection = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-2xl p-6 flex flex-col transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-              style={{
-                backdropFilter: 'blur(20px)',
-                background: 'rgba(255, 255, 255, 0.2)',
-                border: '3px solid rgba(210, 210, 210, 0.8)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)'
-              }}
+              className="group relative rounded-2xl p-6 flex flex-col transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-card/80 dark:bg-card/20 border border-border/50 dark:border-border/20 shadow-lg hover:shadow-xl backdrop-blur-[20px]"
               onClick={() => handleProjectClick(project)}
               tabIndex={0}
               role="button"
               aria-label={`View details for ${project.title}`}
             >
               {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent dark:from-white/5 pointer-events-none" />
               
               {/* Project Image */}
               <div 
-                className="relative w-full h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl group/image"
-                style={{
-                  backdropFilter: 'blur(15px)',
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  border: '3px solid rgba(210, 210, 210, 0.8)'
-                }}
+                className="relative w-full h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl group/image bg-muted/30 dark:bg-muted/20 border border-border/50 dark:border-border/20 backdrop-blur-[15px]"
               >
                 <img 
                   src={project.image} 
@@ -70,24 +59,14 @@ const ProjectCardsSection = () => {
               {/* Category Badge */}
               <div className="mb-3 flex items-center gap-2">
                 <span 
-                  className="inline-block px-3 py-1 rounded-full text-xs font-medium text-gray-700"
-                  style={{
-                    backdropFilter: 'blur(10px)',
-                    background: 'rgba(255, 255, 255, 0.3)',
-                    border: '3px solid rgba(210, 210, 210, 0.8)'
-                  }}
+                  className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
                 >
                   {project.category}
                 </span>
                 {/* AI Tag - show for projects that have AI in technologies */}
                 {project.technologies.includes("AI") && (
                   <span 
-                    className="inline-block px-3 py-1 rounded-full text-xs font-medium text-gray-700"
-                    style={{
-                      backdropFilter: 'blur(10px)',
-                      background: 'rgba(255, 255, 255, 0.3)',
-                      border: '3px solid rgba(210, 210, 210, 0.8)'
-                    }}
+                    className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
                   >
                     AI
                   </span>
@@ -95,17 +74,17 @@ const ProjectCardsSection = () => {
               </div>
               
               {/* Project Title */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 transition-colors duration-200">
+              <h3 className="text-xl font-semibold text-foreground mb-3 transition-colors duration-200">
                 {project.title}
               </h3>
               
               {/* Project Period */}
               {project.period && (
-                <p className="text-xs text-gray-500 mb-2">{project.period}</p>
+                <p className="text-xs text-muted-foreground mb-2">{project.period}</p>
               )}
               
               {/* Project Description */}
-              <p className="text-gray-700 mb-6 text-sm leading-relaxed line-clamp-3 flex-grow">
+              <p className="text-muted-foreground mb-6 text-sm leading-relaxed line-clamp-3 flex-grow">
                 {project.description}
               </p>
               
@@ -116,12 +95,7 @@ const ProjectCardsSection = () => {
                   .map((tech) => (
                   <span 
                     key={tech} 
-                    className="px-3 py-1 rounded-md text-xs font-medium text-gray-600"
-                    style={{
-                      backdropFilter: 'blur(10px)',
-                      background: 'rgba(255, 255, 255, 0.25)',
-                      border: '3px solid rgba(210, 210, 210, 0.8)'
-                    }}
+                    className="px-3 py-1 rounded-md text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
                   >
                     {tech}
                   </span>
@@ -131,12 +105,7 @@ const ProjectCardsSection = () => {
               {/* Action Buttons */}
               <div className="flex gap-3 mt-auto">
                 <button 
-                  className="flex-1 px-4 py-2 rounded-lg text-gray-600 font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
-                  style={{
-                    backdropFilter: 'blur(10px)',
-                    background: 'rgba(255, 255, 255, 0.25)',
-                    border: '3px solid rgba(210, 210, 210, 0.8)'
-                  }}
+                  className="flex-1 px-4 py-2 rounded-lg text-muted-foreground font-medium text-sm transition-all duration-200 hover:scale-[1.02] bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px] hover:bg-muted/70 dark:hover:bg-muted/50"
                   onClick={(e) => {
                     e.stopPropagation();
                     handleProjectClick(project);
@@ -146,12 +115,7 @@ const ProjectCardsSection = () => {
                 </button>
                 {(project.id === 'safe-elderly-care' || project.id === 'banddit-reddit-clone') ? (
                   <button 
-                    className="px-4 py-2 rounded-lg text-gray-600 font-medium text-sm cursor-default"
-                    style={{
-                      backdropFilter: 'blur(10px)',
-                      background: 'rgba(255, 255, 255, 0.15)',
-                      border: '3px solid rgba(210, 210, 210, 0.8)'
-                    }}
+                    className="px-4 py-2 rounded-lg text-muted-foreground font-medium text-sm cursor-default bg-muted/30 dark:bg-muted/20 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
@@ -160,12 +124,7 @@ const ProjectCardsSection = () => {
                   </button>
                 ) : (
                   <button 
-                    className="px-4 py-2 rounded-lg text-white font-medium text-sm transition-all duration-200 hover:scale-[1.02] flex items-center gap-2"
-                    style={{
-                      backdropFilter: 'blur(10px)',
-                      background: '#1f2937',
-                      border: '3px solid rgba(210, 210, 210, 0.8)'
-                    }}
+                    className="px-4 py-2 rounded-lg text-primary-foreground font-medium text-sm transition-all duration-200 hover:scale-[1.02] flex items-center gap-2 bg-primary hover:bg-primary/90"
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
