@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,6 +16,14 @@ const ContactSection = () => {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const captchaRef = useRef<CustomCaptchaRef>(null);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -42,22 +50,30 @@ const ContactSection = () => {
     setStatus('idle');
 
     try {
-      // EmailJS configuration - Replace these with your actual values
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_xxxxxxx';
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_xxxxxxx';
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      // EmailJS configuration
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Debug logging (remove in production)
+      console.log('EmailJS Config:', { serviceId, templateId, publicKey: publicKey?.substring(0, 8) + '...' });
+
+      // Validate required environment variables
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('Missing EmailJS configuration. Please check your environment variables.');
+      }
 
       const templateParams = {
         name: formData.name,
         email: formData.email,
         message: formData.message,
         to_name: 'Mohammad Nabil Hanif',
-        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'contact@example.com',
+        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'mohammad.n.hanif@gmail.com',
         subject: `Portfolio Contact from ${formData.name}`,
         reply_to: formData.email
       };
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      await emailjs.send(serviceId, templateId, templateParams);
 
       setStatus('success');
       setFormData({ name: "", email: "", message: "" });
@@ -139,6 +155,7 @@ const ContactSection = () => {
             <div className="flex justify-center">
               <CustomCaptcha
                 ref={captchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
                 onChange={handleCaptchaChange}
                 theme="light"
               />

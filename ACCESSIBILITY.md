@@ -52,7 +52,7 @@ We are continuously working to improve accessibility. If you encounter any barri
 ## Feedback
 
 If you have suggestions for improving accessibility or encounter any issues, please contact:
-mohammad.n.hanif@gmail.com
+For accessibility-related questions or concerns: contact@yourportfolio.com
 
 ## Testing
 
