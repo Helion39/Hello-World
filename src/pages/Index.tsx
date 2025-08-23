@@ -43,11 +43,7 @@ const Index = () => {
 
   return (
     <div
-      className="min-h-screen"
-      style={{
-        background: '#f1f3f4',
-        minHeight: '100vh',
-      }}
+      className="min-h-screen bg-background"
     >
       {/* Desktop Navigation - Original Resizable Navbar */}
       <div className="hidden md:block">
@@ -68,9 +64,9 @@ const Index = () => {
       <ProjectCardsSection />
       <ContactSection />
       {/* Footer */}
-      <footer className="py-12 pb-24 md:pb-12 px-6 md:px-12 border-t border-gray-200" style={{backgroundColor: '#f1f3f4'}}>
+      <footer className="py-12 pb-24 md:pb-12 px-6 md:px-12 border-t border-gray-200 bg-background">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             © 2025 Mohammad Nabil Hanif. All rights reserved.
           </p>
         </div>

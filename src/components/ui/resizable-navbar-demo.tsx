@@ -11,7 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeDropdown } from "./theme-dropdown";
 
 export default function NavbarDemo() {
   const navItems = [
@@ -48,7 +48,7 @@ export default function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="primary" href="#contact">Contact me</NavbarButton>
-            <ModeToggle />
+            <ThemeDropdown />
           </div>
         </NavBody>
 
@@ -70,7 +70,7 @@ export default function NavbarDemo() {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600"
+                className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
               </a>
