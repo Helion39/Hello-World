@@ -7,7 +7,7 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
-            Detail-oriented and disciplined IT professional based in the Surabaya area, with strong skills in project management, problem-solving, and communication. A fast learner passionate about delivering quality results across diverse areas, including IT Operations, Quality Assurance, IT Audit, Cybersecurity, System Analysis, Project Management, and Web Development. Committed to meeting deadlines, adapting quickly, and driving success in dynamic, technology-driven environments.
+            I am an Information Technology enthusiast currently studying Informatics at President University, passionate about building digital experiences that are functional, intuitive, and secure. I believe that the best technology feels both effortless and safe.
           </p>
         </div>
 
