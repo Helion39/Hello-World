@@ -2,31 +2,17 @@ import { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {
-    id: "website-tester",
-    title: "Website Tester",
-    company: "President University CTF Cybersecurity Event",
-    period: "Jan 2025 - Feb 2025",
-    description: "Tested CTF website for usability and security vulnerabilities. Identified navigation bugs and assessed platform responsiveness. Provided feedback to improve site security and performance."
+    id: "student-ambassador",
+    title: "Student Ambassador",
+    company: "President University",
+    period: "Aug 2024",
+    description: "Represented President University at edufairs and school visits in the Surabaya and Sidoarjo areas, introducing the university to over 500 students across 10+ schools. Delivered classroom presentations to groups of 20–40 students, contributing to a 20–30% increase in booth engagement and brochure requests. Interacted with 15+ school counselors to promote President University, helping raise awareness and encouraging prospective student applications."
   },
   {
-    id: "game-tester",
-    title: "Game Tester",
-    company: "Quality Assistance",
-    period: "Dec 2024 - Feb 2025",
-    description: "Tested game performance for Do You Copy? and The Leeds Murder. Documented 20+ bugs across hardware setups. Conducted functional testing and provided insights to improve gameplay stability."
-  },
-  {
-    id: "ui-ux-designer",
-    title: "UI/UX Designer – Project-Based Internship",
-    company: "Nuri (via Rakamin Academy)",
-    period: "May 2025 - Jun 2025",
-    description: "4-week internship at Nuri e-commerce (partner of Smartfren & Alibaba Group). Applied UI/UX design principles including persona creation, wireframing, and prototyping. Conducted UX research with Google Analytics and delivered a high-fidelity prototype with supporting design documentation."
-  },
-  {
-    id: "vice-head-punico",
-    title: "Vice Head – Seiyuu Circle",
-    company: "President University Nippon Community (PUNICO)",
-    period: "Oct 2024 - Present",
-    description: "Led weekly Seiyuu Circle sessions promoting Japanese voice acting culture. Facilitated voice-over exercises, interactive games, and performance challenges. Engaged 25–30 active members in collaborative discussions and vocal expression activities."
+    id: "head-of-multimedia-ajapu",
+    title: "Head of Multimedia",
+    company: "AJAPU (Arek Jawa Timur President University)",
+    period: "Nov 2024 - Present",
+    description: "Led a team of 3 in the multimedia department, overseeing event documentation and multimedia content creation. Coordinated poster designs, social media submissions, and ensured timely delivery of promotional materials. Captured event photos/videos and produced aftermovies to highlight key moments and boost engagement."
   }
 ];

@@ -67,7 +67,7 @@ const Index = () => {
       <footer className="py-12 pb-24 md:pb-12 px-6 md:px-12 border-t border-border bg-background">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Mohammad Nabil Hanif. All rights reserved.
+            © 2025 Samuel Christofel. All rights reserved.
           </p>
         </div>
       </footer>

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { FaLinkedin, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 import CustomCaptcha, { CustomCaptchaRef } from "@/components/ui/custom-captcha";
 
@@ -67,8 +67,8 @@ const ContactSection = () => {
         name: formData.name,
         email: formData.email,
         message: formData.message,
-        to_name: 'Mohammad Nabil Hanif',
-        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'mohammad.n.hanif@gmail.com',
+        to_name: 'Samuel Christofel',
+        to_email: import.meta.env.VITE_CONTACT_EMAIL || 'samuelch2512@gmail.com',
         subject: `Portfolio Contact from ${formData.name}`,
         reply_to: formData.email
       };
@@ -195,7 +195,7 @@ const ContactSection = () => {
           <p className="text-muted-foreground mb-6">Or connect with me on social media:</p>
           <div className="flex justify-center space-x-6">
             <a
-              href="https://linkedin.com/in/your-profile"
+              href="https://linkedin.com/in/samuelchristofel/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -204,31 +204,13 @@ const ContactSection = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://github.com/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-              aria-label="GitHub Profile"
-            >
-              <FaGithub size={24} />
-            </a>
-            <a
-              href="https://wa.me/your-phone-number"
+              href="https://wa.me/6289699630432"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
               aria-label="WhatsApp"
             >
               <FaWhatsapp size={24} />
-            </a>
-            <a
-              href="https://t.me/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-              aria-label="Telegram"
-            >
-              <FaTelegram size={24} />
             </a>
           </div>
         </div>
