@@ -6,11 +6,8 @@ export const projects: Project[] = [
     title: "Digital Forensic Case Investigations and Incident Analysis",
     category: "Cybersecurity & Analysis",
     description: "Investigated cases involving financial fraud, data exfiltration, and malware infections.",
-    image: "/projects/Cybersecurity Audit PT. Sequre Gate One1.png",
-    images: [
-      "/projects/Cybersecurity Audit PT. Sequre Gate One1.png",
-      "/projects/Cybersecurity Audit PT. Sequre Gate One2.png"
-    ],
+    image: "/placeholder.svg",
+    images: ["/placeholder.svg"],
     period: "2025",
     overview: "Worked as part of a team to investigate cases involving financial fraud, data exfiltration, and malware infections. Recovered deleted and hidden files, analyzed network traffic (PCAPs), extracted steganographic data, and traced user activities. Collaborated using tools like Wireshark, Network Miner, and VirusTotal to uncover digital evidence, reconstruct timelines, and assess criminal intent.",
     role: "Team Member / Digital Forensics Investigator",
@@ -22,11 +19,8 @@ export const projects: Project[] = [
     title: "Food Ordering Website",
     category: "Full-Stack Development",
     description: "Developed a functional food ordering website using PHP and MySQL.",
-    image: "/projects/FoodOrder1.png",
-    images: [
-      "/projects/FoodOrder1.png",
-      "/projects/FoodOrder2.png"
-    ],
+    image: "/placeholder.svg",
+    images: ["/placeholder.svg"],
     period: "2024",
     overview: "Developed a functional food ordering website using PHP and MySQL, featuring a product listing page, order placement system, and basic database integration for managing items and transactions. This project enhanced my understanding of full-stack web development, including frontend design, server-side scripting, and database management, while also strengthening my ability to build and connect user-friendly interfaces with backend systems.",
     role: "Developer",
