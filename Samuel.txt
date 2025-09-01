@@ -1,0 +1,65 @@
+SAMUEL CHRISTOFEL
++6289699630432 | samuelch2512@gmail.com | linkedin.com/in/samuelchristofel/
+Detail-oriented and disciplined IT professional based in the Surabaya area, with strong skills in project management, problem-solving,
+and communication. A fast learner passionate about delivering quality results across diverse areas, including IT Operations, Quality
+Assurance, IT Audit, Cybersecurity, System Analysis, Project Management, and Web Development. Committed to meeting deadlines,
+adapting quickly, and driving success in dynamic, technology-driven environments.
+Work Experiences
+President University - Surabaya & Sidoarjo, East Java,
+Indonesia
+Aug 2024
+Student Ambassador
+Represented President University at edufairs and school visits in the Surabaya and Sidoarjo areas, introducing the university to over 500
+students across 10+ schools.
+Delivered classroom presentations to groups of 20–40 students, contributing to a 20–30% increase in booth engagement and brochure
+requests.
+Interacted with 15+ school counselors to promote President University, helping raise awareness and encouraging prospective student
+applications.
+Education Level
+President University - Bekasi Regency, West Java, Indonesia Sep 2023 - Dec 2026 (Expected)
+Bachelor of Informatics (Concentration in Cyber Security), 3.82/4.00
+Jababeka Scholarship Rank 2 Awardee | Partial scholarship awarded based on outstanding high school academic performance.
+Korea-ASEAN Digital Academy (KADA) Bootcamp - Bekasi Regency, West Java,
+Indonesia
+Jun 2025 - Aug 2025 (Expected)
+Completed 10-week intensive program powered by ASEAN-Korea Cooperation Fund dan Kementerian Komunikasi & Urusan Digital RI
+focused on AI Ethics and Data Security, Web Development, Backend Development, Cloud Services Utilization, Basis of Data Analysis,
+DevOps & CI/CD, UI/UX Design. Delivered final capstone project as part of a team.
+Organisational Experience
+AJAPU (Arek Jawa Timur President University) - Bekasi Regency, West Java, Indonesia Nov 2024 - Present
+Head of Multimedia
+AJAPU is an organization that brings together students from East Java at President University, fostering a sense of community, cultural
+pride, and mutual support. It provides a platform for students to connect, collaborate, and engage in activities that promote the values and
+heritage of East Java.
+Led a team of 3 in the multimedia department, overseeing event documentation and multimedia content creation.
+Coordinated poster designs, social media submissions, and ensured timely delivery of promotional materials.
+Captured event photos/videos and produced aftermovies to highlight key moments and boost engagement.
+Skills, Achievements & Other Experience
+Economic Survival Project: Soona - Custom Gift Box Service (2023): Participated in the Economic Survival Project, a university-wide
+business simulation where students developed and ran a real business from scratch. Co-founded Soona, a gift box service aimed at
+filling the gap in Cikarang’s gifting market. I actively contributed to product development and marketing efforts, including promotional
+broadcasts on WhatsApp, managing Instagram content, and handling booth activities during a university-wide exhibition with 100+
+attendees. Soona operates on a pre-order basis with free delivery to President University students, and we committed to delivering highquality, elegant gift experiences. This project strengthened my entrepreneurial mindset, customer engagement skills, and practical
+understanding of running a small business end-to-end.
+Social Project: Smart Surfing – Promoting Internet Safety and Digital Literacy in Local Communities (2024): As the Project
+Manager for Smart Surfing, a social initiative organized by my team in collaboration with President University and CSR partners, I led a
+team of 10 to educate students in Pangalengan, Bandung, on internet safety and digital literacy. We designed interactive activities—
+including mini-games, scenario-based discussions, and a digital literacy quiz—to engage participants and reinforce learning. The
+initiative achieved strong outcomes, with students scoring an average of 80% on post-activity quizzes, demonstrating effective
+knowledge transfer. My role involved planning content, facilitating sessions, and contributing creative ideas to make the program more
+relatable and engaging for the local students.
+Duolingo English Test (DET): Scored 125/160 (2023)  (2023)
+Certifications (Dicoding): Learn Basic JavaScript Programming, Learn Back-End with JavaScript, Learn Basic SQL, Learn Git
+Basics with GitHub (2023)
+Creating a Food Ordering Website using PHP (2024): Developed a functional food ordering website using PHP and MySQL, featuring
+a product listing page, order placement system, and basic database integration for managing items and transactions. This project
+enhanced my understanding of full-stack web development, including frontend design, server-side scripting, and database management,
+while also strengthening my ability to build and connect user-friendly interfaces with backend systems.
+Digital Forensic Case Investigations and Incident Analysis (2025): Worked as part of a team to investigate cases involving financial
+fraud, data exfiltration, and malware infections. Recovered deleted and hidden files, analyzed network traffic (PCAPs), extracted
+steganographic data, and traced user activities. Collaborated using tools like Wireshark, Network Miner, and VirusTotal to uncover digital
+evidence, reconstruct timelines, and assess criminal intent.
+Creating Chatzing – Android-Based WhatsApp Clone using Java (2024): Built a mobile chat application using Android Studio and
+Firebase, replicating key WhatsApp features. Independently developed and integrated additional modules including a camera feature for
+photo sharing, Bluetooth functionality for device connectivity, and a compass tool using Android's SensorManager. This project
+strengthened my abilities in Android development, real-time communication, and hardware sensor integration.
