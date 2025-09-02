@@ -51,6 +51,7 @@ relatable and engaging for the local students.
 Duolingo English Test (DET): Scored 125/160 (2023)  (2023)
 Certifications (Dicoding): Learn Basic JavaScript Programming, Learn Back-End with JavaScript, Learn Basic SQL, Learn Git
 Basics with GitHub (2023)
+Personal Portfolio Website (2024): Designed and built a responsive personal portfolio website from scratch using React, TypeScript, and Tailwind CSS. The site showcases my skills, projects, and experiences through a clean and modern interface. This project demonstrates my proficiency in frontend development and building web applications.
 Creating a Food Ordering Website using PHP (2024): Developed a functional food ordering website using PHP and MySQL, featuring
 a product listing page, order placement system, and basic database integration for managing items and transactions. This project
 enhanced my understanding of full-stack web development, including frontend design, server-side scripting, and database management,

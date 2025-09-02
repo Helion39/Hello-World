@@ -2,6 +2,19 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "portfolio-website",
+    title: "Personal Portfolio Website",
+    category: "Frontend Development",
+    description: "Developed a personal portfolio website to showcase my skills and projects.",
+    image: "/placeholder.svg",
+    images: ["/placeholder.svg"],
+    period: "2024",
+    overview: "Designed and built a responsive personal portfolio website from scratch using modern frontend technologies. The site features a clean design, smooth animations, and detailed descriptions of my projects and experiences. This project demonstrates my proficiency in building web applications with React and TypeScript, and styling with Tailwind CSS.",
+    role: "Developer",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    details: ["Built with React and TypeScript", "Styled with Tailwind CSS", "Responsive design for mobile and desktop", "Deployed using Netlify"]
+  },
+  {
     id: "digital-forensics",
     title: "Digital Forensic Case Investigations and Incident Analysis",
     category: "Cybersecurity & Analysis",
