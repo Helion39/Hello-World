@@ -1,6 +1,5 @@
 
 import { FlipWords } from "@/components/ui/flip-words";
-
 const HeroSection = () => {
   const specialties = ["Cybersecurity", "Web Development", "Project Management"];
 
