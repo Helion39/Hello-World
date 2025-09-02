@@ -85,24 +85,16 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(20px)" : "blur(8px)",
-        boxShadow: visible
-          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-          : "none",
-        width: visible ? "40%" : "100%",
-        y: visible ? 20 : 0,
+        y: visible ? 0 : -100,
+        opacity: visible ? 1 : 0,
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 50,
-      }}
-      style={{
-        minWidth: "800px",
+        stiffness: 300,
+        damping: 30,
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start bg-background/10 dark:bg-background/10 px-4 py-2 lg:flex rounded-full border border-border/20",
-        visible && "bg-background/20 dark:bg-background/20",
+        "relative z-[60] mx-auto hidden w-full max-w-5xl flex-row items-center justify-between self-start bg-card px-4 py-2 lg:flex rounded-2xl border-2 shadow-sharp",
         className
       )}
     >
@@ -145,25 +137,8 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
-      animate={{
-        backdropFilter: visible ? "blur(10px)" : "none",
-        boxShadow: visible
-          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-          : "none",
-        width: visible ? "90%" : "100%",
-        paddingRight: visible ? "12px" : "0px",
-        paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
-        y: visible ? 20 : 0,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 200,
-        damping: 50,
-      }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-background/80 dark:bg-background/80",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-card px-4 py-2 lg:hidden rounded-2xl border-2 shadow-sharp",
         className
       )}
     >
@@ -198,11 +173,11 @@ export const MobileNavMenu = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-background px-4 py-8 shadow-lg border border-border/20",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-card px-4 py-8 shadow-sharp border-2",
             className
           )}
         >
@@ -242,39 +217,29 @@ export const NavbarLogo = () => {
   );
 };
 
+import { buttonVariants } from "@/components/ui/button";
+
 export const NavbarButton = ({
   href,
   as: Tag = "a",
   children,
   className,
-  variant = "primary",
+  variant = "default",
   ...props
 }: {
   href?: string;
   as?: React.ElementType;
   children: React.ReactNode;
   className?: string;
-  variant?: "primary" | "secondary" | "dark" | "gradient";
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link";
 } & (
   | React.ComponentPropsWithoutRef<"a">
   | React.ComponentPropsWithoutRef<"button">
 )) => {
-  const baseStyles =
-    "px-4 py-2 rounded-md text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
-
-  const variantStyles = {
-    primary:
-      "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg",
-    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    dark: "bg-foreground text-background hover:bg-foreground/90 shadow-lg",
-    gradient:
-      "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
-  };
-
   return (
     <Tag
       href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
+      className={cn(buttonVariants({ variant }), className)}
       {...props}
     >
       {children}

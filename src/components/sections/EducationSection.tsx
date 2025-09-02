@@ -2,7 +2,7 @@ import { education } from "@/data/education";
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
+    <section id="education" className="py-20 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">Education</h2>
@@ -13,9 +13,9 @@ const EducationSection = () => {
 
         <div className="space-y-8">
           {education.map((edu) => (
-            <div 
-              key={edu.id} 
-              className="rounded-2xl p-6 transition-all duration-300 hover:scale-[1.01] bg-card/80 dark:bg-card/20 border border-border/50 dark:border-border/20 backdrop-blur-[20px]"
+            <div
+              key={edu.id}
+              className="rounded-2xl p-6 bg-card border-2 shadow-sharp"
             >
               <div className="flex flex-col space-y-4">
                 <div>
@@ -26,9 +26,9 @@ const EducationSection = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {edu.achievements.map((achievement, index) => (
-                    <span 
-                      key={index} 
-                      className="px-4 py-2 rounded-full text-sm font-medium bg-primary/15 text-primary border-2 border-primary/30"
+                    <span
+                      key={index}
+                      className="px-4 py-2 rounded-full text-sm font-medium bg-primary text-primary-foreground"
                     >
                       {achievement}
                     </span>

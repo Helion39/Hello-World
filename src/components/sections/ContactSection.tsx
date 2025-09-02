@@ -88,7 +88,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
+    <section id="contact" className="py-20 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">Let's Connect</h2>
@@ -100,7 +100,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-12 bg-card border-2 shadow-sharp rounded-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>

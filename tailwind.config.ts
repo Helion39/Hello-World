@@ -89,6 +89,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			boxShadow: {
+				sharp: '4px 4px 0px 0px hsl(var(--foreground))',
+				'sharp-sm': '2px 2px 0px 0px hsl(var(--foreground))',
 			}
 		}
 	},

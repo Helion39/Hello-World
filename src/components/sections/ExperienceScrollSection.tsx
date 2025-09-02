@@ -3,7 +3,7 @@ import { Shield, Gamepad2, Palette, Users } from "lucide-react";
 
 const ExperienceScrollSection = () => {
   return (
-    <section id="experience" className="bg-muted/30 dark:bg-muted/10">
+    <section id="experience">
       <div className="py-20 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -15,9 +15,9 @@ const ExperienceScrollSection = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {experiences.map((exp, index) => (
-              <div 
+              <div
                 key={exp.id}
-                className="rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] bg-card/80 dark:bg-card/20 border border-border/50 dark:border-border/20 backdrop-blur-[20px] shadow-lg"
+                className="rounded-2xl p-6 bg-card border-2 shadow-sharp"
               >
                 {/* Company Header */}
                 <div className="flex items-start justify-between mb-4">

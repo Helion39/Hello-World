@@ -4,13 +4,13 @@ const HeroSection = () => {
   const specialties = ["Cybersecurity", "Web Development", "Project Management"];
 
   return (
-    <section id="home" className="min-h-screen flex items-center px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
+    <section id="home" className="min-h-screen flex items-center px-6 md:px-12">
       <div className="max-w-7xl mx-auto w-full">
         {/* Mobile Layout */}
         <div className="md:hidden flex flex-col items-center space-y-6 text-center">
           <div className="flex justify-center">
             <div
-              className="p-2 rounded-xl drop-shadow-lg bg-card/80 dark:bg-card/20 border-2 border-border/50 dark:border-border/20 backdrop-blur-[20px]"
+              className="p-2 rounded-xl bg-card border-2 shadow-sharp"
             >
               <img
                 src="/placeholder.svg"
@@ -43,7 +43,7 @@ const HeroSection = () => {
         <div className="hidden md:grid md:grid-cols-2 gap-20 items-center">
           <div className="flex justify-center items-center">
             <div
-              className="p-4 rounded-2xl drop-shadow-xl bg-card/80 dark:bg-card/20 border-3 border-border/50 dark:border-border/20 backdrop-blur-[20px]"
+              className="p-4 rounded-2xl bg-card border-2 shadow-sharp"
             >
               <img
                 src="/placeholder.svg"

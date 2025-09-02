@@ -2,7 +2,7 @@ import { skills } from "@/data/skills";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
+    <section id="about" className="py-20 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">About Me</h2>
@@ -46,9 +46,9 @@ const AboutSection = () => {
             <h3 className="text-xl font-medium text-foreground mb-6">Core Technologies</h3>
             <div className="grid grid-cols-2 gap-4">
               {skills.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 hover:scale-[1.02] bg-card/80 dark:bg-card/20 border border-border/50 dark:border-border/20 backdrop-blur-[15px]"
+                <div
+                  key={skill.name}
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-card border-2 shadow-sharp-sm"
                 >
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center">
                     <div className="text-lg">{skill.icon}</div>

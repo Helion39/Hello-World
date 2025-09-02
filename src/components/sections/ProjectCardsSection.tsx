@@ -18,7 +18,7 @@ const ProjectCardsSection = () => {
   };
 
   return (
-    <section id="project-cards" className="py-20 px-6 md:px-12 bg-muted/30 dark:bg-muted/10">
+    <section id="project-cards" className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">Portfolio</h2>
@@ -31,21 +31,18 @@ const ProjectCardsSection = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-2xl p-6 flex flex-col transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-card/80 dark:bg-card/20 border border-border/50 dark:border-border/20 shadow-lg hover:shadow-xl backdrop-blur-[20px]"
+              className="group relative rounded-2xl p-6 flex flex-col cursor-pointer bg-card border-2 shadow-sharp"
               onClick={() => handleProjectClick(project)}
               tabIndex={0}
               role="button"
               aria-label={`View details for ${project.title}`}
             >
-              {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent dark:from-white/5 pointer-events-none" />
-              
               {/* Project Image */}
-              <div 
-                className="relative w-full h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl group/image bg-muted/30 dark:bg-muted/20 border border-border/50 dark:border-border/20 backdrop-blur-[15px]"
+              <div
+                className="relative w-full h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl bg-muted/30 dark:bg-muted/20 border"
               >
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title} 
                   className="object-contain h-full max-w-full transition-transform duration-300 group-hover:scale-105" 
                 />
@@ -58,15 +55,15 @@ const ProjectCardsSection = () => {
               
               {/* Category Badge */}
               <div className="mb-3 flex items-center gap-2">
-                <span 
-                  className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
+                <span
+                  className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted border"
                 >
                   {project.category}
                 </span>
                 {/* AI Tag - show for projects that have AI in technologies */}
                 {project.technologies.includes("AI") && (
-                  <span 
-                    className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
+                  <span
+                    className="inline-block px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-muted border"
                   >
                     AI
                   </span>
@@ -93,9 +90,9 @@ const ProjectCardsSection = () => {
                 {project.technologies
                   .filter((tech) => tech !== "AI" && tech !== "Full-Stack Development")
                   .map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="px-3 py-1 rounded-md text-xs font-medium text-muted-foreground bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
+                  <span
+                    key={tech}
+                    className="px-3 py-1 rounded-md text-xs font-medium text-muted-foreground bg-muted border"
                   >
                     {tech}
                   </span>
@@ -104,8 +101,8 @@ const ProjectCardsSection = () => {
               
               {/* Action Buttons */}
               <div className="flex gap-3 mt-auto">
-                <button 
-                  className="flex-1 px-4 py-2 rounded-lg text-muted-foreground font-medium text-sm transition-all duration-200 hover:scale-[1.02] bg-muted/50 dark:bg-muted/30 border border-border/50 dark:border-border/20 backdrop-blur-[10px] hover:bg-muted/70 dark:hover:bg-muted/50"
+                <button
+                  className="flex-1 px-4 py-2 rounded-lg font-medium text-sm bg-muted hover:bg-muted-foreground/20 border"
                   onClick={(e) => {
                     e.stopPropagation();
                     handleProjectClick(project);
@@ -114,8 +111,8 @@ const ProjectCardsSection = () => {
                   View Details
                 </button>
                 {(project.id === 'safe-elderly-care' || project.id === 'banddit-reddit-clone') ? (
-                  <button 
-                    className="px-4 py-2 rounded-lg text-muted-foreground font-medium text-sm cursor-default bg-muted/30 dark:bg-muted/20 border border-border/50 dark:border-border/20 backdrop-blur-[10px]"
+                  <button
+                    className="px-4 py-2 rounded-lg font-medium text-sm cursor-default bg-muted border"
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
@@ -123,8 +120,8 @@ const ProjectCardsSection = () => {
                     Coming Soon
                   </button>
                 ) : (
-                  <button 
-                    className="px-4 py-2 rounded-lg text-primary-foreground font-medium text-sm transition-all duration-200 hover:scale-[1.02] flex items-center gap-2 bg-primary hover:bg-primary/90"
+                  <button
+                    className="px-4 py-2 rounded-lg text-primary-foreground font-medium text-sm flex items-center gap-2 bg-primary hover:bg-primary/90"
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
